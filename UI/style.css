@@ -4,13 +4,14 @@ body {
     line-height:2.0;
     margin: 0;
     padding: 0;
-    background: url("img_tree.gif") no-repeat fixed center; 
+    background-image: url("vintagejs-com.jpg")
+}
 
 /* global */
 .container{
-    width:80%;
-    margin: auto;
-    overflow: hidden;
+width:80%;
+margin: auto;
+overflow: hidden;
 }
 ul{
 margin: 0;
@@ -18,50 +19,80 @@ padding: 0;
 }
 .button_1{
 height: 38px;
-background: #e8491d;
-border: none;
 padding-left: 20px;
 padding-right: 20px;
-color: #fff;
+color:  #2e5fb0;
 }
-
-/* header **/
+* header **/
 header{
-    background: #35424a;
-    color: #ffffff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #e8491d 3px solid;
+  background: #35424a;
+  color: #ffffff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #e8491d 3px solid;
 
 }
 header a{
-color: #fff;
-text-decoration: none;
-text-transform: uppercase;
-font-size: 15px;
+  color:#4d5656;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
 header li{
-display: inline;
-padding: 0 20px 0 20px;
-}
+  display: inline;
+  padding: 0 20px 0 20px;
 
+
+}
+img{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0px;
+    width: 70px;
+    float: left;
+    margin-left: 0%;
+}
 header #branding{
-float: left;
+  float: left;
 }
 header #branding h1{
-margin:0;
+  margin:0;
 }
 header nav{
-float:right;
+  float:right;
+}
+header .highlight, header .current a {
+  color: #b03a2e;
+  font-size: 300%;
+  font-weight:bold;
+  -webkit-animation: mymove 10s infinite; /* Chrome, Safari, Opera */
+  animation: mymove 5s infinite;
+  margin-left: 300px;
+
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+from {color: #b03a2e;}
+to {color: #424949;}
 }
 
-header .highlight, header .current a {
-color: beige;
-font-weight:bold;
+/* Standard syntax */
+@keyframes mymove {
+from {color: #b03a2e;}
+to {color: #424949;}
 }
 header a:hover{
-color:red;
-font-weight:bold;
-
+    color:red;
+    font-weight:bold;
 }
+
+/* footer */
+.copscene{
+    padding: 30px;
+    margin-top: 700px;
+    color:#808000;
+    text-align: center;
+  }
+
+
