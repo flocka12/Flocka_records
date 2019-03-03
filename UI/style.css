@@ -4,8 +4,7 @@ body {
     line-height:2.0;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-}
+    background: url("img_tree.gif") no-repeat fixed center; 
 
 /* global */
 .container{
@@ -58,7 +57,7 @@ float:right;
 }
 
 header .highlight, header .current a {
-color: red;
+color: beige;
 font-weight:bold;
 }
 header a:hover{
