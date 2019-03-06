@@ -12,6 +12,7 @@ body {
 width:80%;
 margin: auto;
 overflow: hidden;
+
 }
 ul{
 margin: 0;
@@ -22,6 +23,9 @@ height: 38px;
 padding-left: 20px;
 padding-right: 20px;
 color:  #2e5fb0;
+margin-right: 0%;
+overflow: hidden;
+
 }
 * header **/
 header{
@@ -49,7 +53,7 @@ img{
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 0px;
-    width: 70px;
+    width: 100px;
     float: left;
     margin-left: 0%;
 }
@@ -68,7 +72,7 @@ header .highlight, header .current a {
   font-weight:bold;
   -webkit-animation: mymove 10s infinite; /* Chrome, Safari, Opera */
   animation: mymove 5s infinite;
-  margin-left: 300px;
+  margin-left: 200px;
 
 }
 /* Chrome, Safari, Opera */
@@ -90,7 +94,7 @@ header a:hover{
 /* footer */
 .copscene{
     padding: 30px;
-    margin-top: 700px;
+    margin-top: 650px;
     color:#808000;
     text-align: center;
   }
@@ -115,4 +119,66 @@ header a:hover{
 aside#sidebar .quote textarea{
       width:90%;
       padding: 20px;
-      }
+      }    
+/* showcase**/
+#showcase{
+  min-height: 650px;
+  text-align: center;
+  color:#798b82;
+
+}
+#showcase .container q{
+  margin-top: 500px;
+  font-size: 60px;
+  margin-bottom:0px;
+}
+#showcase q{
+  font-size: 40px;
+}
+/*profile html **/
+#profsee{
+  border-top: dashed thick #273a7f;
+  padding: 0px;
+  width: auto;
+}
+#profsee h1,label{
+  margin-bottom: 0%;
+  margin-top: 15px;
+  font-size: 23px;
+  color:  #330335;
+
+}
+#profsee p{
+  font-size: 20px;
+  color:  #16a56e;
+}
+#profsee img{
+  width: 200px;
+}
+#profsee .prof1{
+  width: 250px; 
+}
+#profsee .prof2{
+  width: 1750px; 
+}
+#sidecar{
+  margin: auto;
+  width: 30%;
+  margin-top: 15px;
+  font-size: 20px;
+  color:  #330335;
+}
+#sidecar .dark textarea{
+  width:90%;
+  padding: 5px;
+  }
+
+#sidecar .quote input{
+    width:90%;
+    padding: 15px;
+    }
+
+aside#sidecar .quote textarea{
+    width:50%;
+    padding: 10px;
+    }
