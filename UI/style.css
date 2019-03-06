@@ -183,3 +183,19 @@ aside#sidecar .quote textarea{
     width:50%;
     padding: 10px;
     }
+
+#blogsee {
+    border-top: dashed thick #273a7f;
+    padding: 0px;
+    width: auto;
+    background-image: url("flocka_sunset.jpg");
+}
+#blogsee img{
+  width: 200px;
+}
+#blogsee .blog1{
+  width: 250px; 
+}
+#blogsee .blog2{
+  width: 1750px; 
+}
