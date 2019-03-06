@@ -95,4 +95,24 @@ header a:hover{
     text-align: center;
   }
 
+#sidebar{
+    margin: auto;
+    width: 30%;
+    margin-top: 15px;
+    font-size: 20px;
+    color:  #00FF00;
+  }
+#sidebar .dark textarea{
+    width:90%;
+    padding: 5px;
+    }
 
+#sidebar .quote input{
+      width:90%;
+      padding: 25px;
+      }
+  
+aside#sidebar .quote textarea{
+      width:90%;
+      padding: 20px;
+      }
