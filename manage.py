@@ -1,17 +1,20 @@
 ''' module to create database migrations '''
 import argparse
-import psycopg2
+from DB.db_con import db_init
+from DB.queries import drop_tables, create_tables, truncate
 
-CONNECTION = psycopg2.connect(
-    "dbname='flocka_records' user='postgres' host='localhost' password='postgres'")
-def migrate(CONNECTION):
-    pass
+def migrate():
+    ''' create db migrations '''
+    drop_tables()
+    create_tables()
+    # create_tables(db_conn)
+    # pass
 
 
 if __name__ == "__main__":
 
     PARSER = argparse.ArgumentParser(
-        description='Database management tool for iReporter')
+        description='Database management tool for flocka_records')
 
     PARSER.add_argument(
         '-a', '--action', metavar='[migrate|truncate|seed]', help='Database action',
@@ -20,17 +23,16 @@ if __name__ == "__main__":
     ARGS = PARSER.parse_args()
 
 # open database connection
+    BASE_CONN = db_init()
 
     if ARGS.action == 'migrate':
-        # run migrate function
-        pass
+        migrate()
     elif ARGS.action == 'truncate':
-        # run truncate function
-        pass
+        truncate()
     elif ARGS.action == 'seed':
         # adds seed data to appliction
         pass
     else:
         pass
-
+BASE_CONN.commit()
 # close connection here
