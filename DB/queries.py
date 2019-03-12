@@ -12,6 +12,7 @@ def create_tables():
         firstname VARCHAR(191) NOT NULL,
         lastname VARCHAR(191) NOT NULL,
         email VARCHAR(191) NOT NULL,
+        username VARCHAR(191) NOT NULL,
         password VARCHAR(191) NOT NULL
         )
         """,
