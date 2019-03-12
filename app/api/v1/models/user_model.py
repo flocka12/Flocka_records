@@ -30,3 +30,9 @@ class User():
         self.cursor.execute(query, (firstname, lastname, username, email, password))
         self.connection.commit()
         return self.cursor.fetchone()
+    def for_where(self, key, value):
+        ''' locate a value in the table '''
+        query = "SELECT * FROM {} WHERE {} = %s".format(
+            self.table, key)
+        self.cursor.execute(query, (value,))
+        return self.cursor.fetchall()
