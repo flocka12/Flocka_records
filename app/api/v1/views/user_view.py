@@ -33,4 +33,24 @@ class UserRegistration(Resource):
             'data': response,
             'message': 'Successfully created user'
             }
-        
+class Userlogin(Resource):
+    ''' define user login '''
+    def __init__(self):
+        self.data_base = User()
+    def post(self):
+        ''' logins user '''
+        data, errors = UserSchema(only=('username', 'password')).load(request.get_json())
+
+        if errors:
+            return errors
+
+        users = self.data_base.for_where('username', data['username'])
+
+        if not users:
+            return 'not users'
+        user = users[0]
+
+        return {
+            'user': user,
+            'message': 'Successfully login'
+        }
