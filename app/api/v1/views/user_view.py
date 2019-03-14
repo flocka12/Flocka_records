@@ -1,7 +1,12 @@
 ''' module representing the user view '''
 from flask_restful import Resource, request
+from flask_jwt_extended import (
+    jwt_required, create_access_token, create_refresh_token,
+    get_jwt_identity
+)
 from app.api.v1.models.user_model import User
 from app.api.v1.utils.schema import UserSchema
+
 class UserRegistration(Resource):
     ''' creates a user in the database '''
     def __init__(self):
@@ -51,6 +56,16 @@ class Userlogin(Resource):
         user = users[0]
 
         return {
+            'access_token': create_access_token(UserSchema(exclude=['password']).dump(user)[0],
+                                                expires_delta=False),
+            'refresh_token': create_refresh_token(UserSchema(exclude=['password']).dump(user)[0]),
             'user': user,
             'message': 'Successfully login'
         }
+class UserProfile(Resource):
+    ''' Define User Profile with authorization'''
+    @jwt_required
+    def get(self):
+        ''' get user by token '''
+        user = get_jwt_identity
+        return user
