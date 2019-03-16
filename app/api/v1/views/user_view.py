@@ -37,7 +37,7 @@ class UserRegistration(Resource):
         return {
             'data': response,
             'message': 'Successfully created user'
-            }
+            }, 201
 class Userlogin(Resource):
     ''' define user login '''
     def __init__(self):

@@ -30,9 +30,9 @@ if __name__ == "__main__":
     elif ARGS.action == 'truncate':
         truncate()
     elif ARGS.action == 'seed':
-        # adds seed data to appliction
+        # seed()
         pass
     else:
         pass
-BASE_CONN.commit()
+    BASE_CONN.commit()
 # close connection here
