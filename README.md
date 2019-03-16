@@ -3,6 +3,8 @@
 Welcome to the new era of music!!
 This app enables you to access music from your Flocka_Records favorite artists and enjoy your music.
 
+[![Build Status](https://travis-ci.com/flocka12/Flocka_records.svg?branch=develop)](https://travis-ci.com/flocka12/Flocka_records)
+
 ### API ENDPOINTS
 
 **_NOTE_**:
