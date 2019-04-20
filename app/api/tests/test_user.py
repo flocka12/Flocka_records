@@ -26,44 +26,29 @@ class UserTest(unittest.TestCase):
         truncate()
 
     def test_it_registers_user(self):
-        "setup"
-        response = self.client.post('api/v2/auth/signup', json=self.sample_user)
+        # act 
+        response = self.client.post('api/v1/auth/signup', json=self.sample_user)
 
-        self.assertEqual(404, response.status_code)
-        # self.assertEqual(self.sample_user['username'], response.get_json()['data']['username'])
-        # self.assertNotIn('password', response.get_json())
+        # assert 
+        self.assertEqual(201, response.status_code)
+        self.assertEqual(self.sample_user['username'], response.get_json()['data']['username'])
+        self.assertEqual(self.sample_user['email'], response.get_json()['data']['email'])
+        self.assertNotIn('password', response.get_json()['data'])
 
-    # def test_registration_with_duplicate_email_fails(self):
-    #     "# setup"
-    #     self.data_base.add_user(self.sample_user)
+    def test_it_logs_in_user(self):
+        # setup
+        self.data_base.add_user(self.sample_user)
+        
+        # act 
+        response = self.client.post('api/v1/auth/login', json=self.sample_user)
 
-    #     # act
-    #     self.sample_user.update({
-    #         'username': 'something_new',
-    #         'password': 'Kab3!Eds'
-    #     })
-
-    #     response = self.client.post('api/v2/auth/signup', json=self.sample_user)
-
-    #     # assert
-    #     self.assertEqual(422, response.status_code)
-    #     self.assertEqual('email already in use', response.get_json()['message'])
-
-    # def test_registration_with_duplicate_username_fails(self):
-    #     "# setup"
-    #     self.data_base.add_user(self.sample_user)
-
-    #     # act
-    #     self.sample_user.update({
-    #         'password': 'Kab3!Eds',
-    #         'email': 'new@anewemail.com'
-    #     })
-
-    #     response = self.client.post('api/v2/auth/signup', json=self.sample_user)
-
-    #     # assert
-    #     # self.assertEqual(422, response.status_code)
-    #     self.assertEqual('username already taken', response.get_json()['message'])
+        # assert 
+        data = response.get_json()
+        
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(data['message'], 'Successfully logged in')
+        self.assertIn('access_token', data)
+        self.assertIn('refresh_token', data)
 
 if __name__ == "__main__":
     unittest.main()
