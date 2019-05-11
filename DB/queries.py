@@ -47,7 +47,7 @@ def seed():
     db_conn = db_init()
     db_cur = db_conn.cursor()
     db_cur.execute("INSERT INTO users (firstname, lastname, email, username, password)\
-        VALUES ('Waka', 'Jos', 'admin@app.com', 'hypnos', 'stesra')")
+        VALUES ('Waka', 'Jos', 'admin@app.com', 'hypnos', 'saihuhu')")
     db_conn.commit()
     # pass
 if __name__ == "__main__":

@@ -7,10 +7,7 @@ services:
   - postgresql
 
 addons:
-  postgresql: "9.6" 
-
-before_script:
-  - psql -c "CREATE DATABASE flocka_records;" -U postgres
+  postgresql: "11.2" 
 
 install:    
 - pip install -r requirements.txt
