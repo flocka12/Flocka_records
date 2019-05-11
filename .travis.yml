@@ -1,13 +1,13 @@
 language: python
 
 python:
- - "3.5.2"
+ - "3.7.3"
 
 services:
   - postgresql
 
 addons:
-  postgresql: "9.6" 
+  postgresql: "11.2" 
 
 before_script:
   - psql -c "CREATE DATABASE flocka_records;" -U postgres
