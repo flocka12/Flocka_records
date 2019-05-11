@@ -43,11 +43,12 @@ def drop_tables():
     for table in trun_quer:
         db_curr.execute("DROP TABLE IF EXISTS {} ".format(table))
         db_conn.commit()
-# def seed():
-#     db_conn = db_init()
-#     db_cur = db_conn.cursor()
-#     db_cur.execute("INSERT INTO users (firstname, lastname, email, username, password)\
-#         VALUES ('Waka', 'Jos', 'admin@app.com', 'hypnos', 'stesra')"
-#         db_conn.commit()
+def seed():
+    db_conn = db_init()
+    db_cur = db_conn.cursor()
+    db_cur.execute("INSERT INTO users (firstname, lastname, email, username, password)\
+        VALUES ('Waka', 'Jos', 'admin@app.com', 'hypnos', 'stesra')")
+    db_conn.commit()
+    # pass
 if __name__ == "__main__":
     pass

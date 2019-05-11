@@ -1,7 +1,7 @@
 ''' module to create database migrations '''
 import argparse
 from DB.db_con import db_init
-from DB.queries import drop_tables, create_tables, truncate
+from DB.queries import drop_tables, create_tables, truncate, seed
 
 def migrate():
     ''' create db migrations '''
@@ -30,8 +30,7 @@ if __name__ == "__main__":
     elif ARGS.action == 'truncate':
         truncate()
     elif ARGS.action == 'seed':
-        # seed()
-        pass
+        seed()
     else:
         pass
     BASE_CONN.commit()
