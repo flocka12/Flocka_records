@@ -14,15 +14,16 @@ before install:
 
 install:    
   - pip install -r requirements.txt
-  - pip install pytest
+  - pip install pytest-cov
   - pip install coveralls
 
 
 before_script:
   - psql -c 'create database flocka_records;' -U postgres
+  - psql -c 'DROP DATABASE IF EXISTS flocka_records;' -U postgres;
  
 script:    
-  - pytest app/api/tests
+  - pytest --cov=app/api/tests
   - coveralls
 
 after_success:
