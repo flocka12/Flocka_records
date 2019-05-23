@@ -3,7 +3,7 @@ import settings
 import unittest
 from app import create_app
 from app.api.v1.models.user_model import User
-from manage import migrate, truncate
+from manage import migrate, truncate, seed
 
 
 class UserTest(unittest.TestCase):
@@ -15,6 +15,7 @@ class UserTest(unittest.TestCase):
         self.client = app.test_client()
         self.data_base = User()
         migrate()
+        seed()
         self.sample_user = dict(
             firstname="test_first",
             lastname="test_last",
