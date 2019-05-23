@@ -1,4 +1,5 @@
 ''' module for testing the user model '''
+import settings
 import unittest
 from app import create_app
 from app.api.v1.models.user_model import User
