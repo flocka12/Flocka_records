@@ -1,21 +1,29 @@
 language: python
 
 python:
- - "3.5.2"
+ - "3.7.3"
 
 services:
   - postgresql
 
 addons:
-  postgresql: "11.2" 
+  - postgresql: "11.2" 
+
+
+before_script:
+  - psql -c 'create database flocka_records;' -U postgres
+ 
+before install:
+  - sudo apt-get update
 
 install:    
-- pip install -r requirements.txt
-- pip install pytest-cov
-- pip install coveralls
+  - pip install -r requirements.txt
+  - pip install pytest-cov
+  - pip install coveralls
 
 script:    
-- pytest --cov=app/api/tests
-- coveralls
+  - pytest --cov=app/api/tests
+  - coveralls
+
 after_success:
-- coveralls
+  - coveralls
