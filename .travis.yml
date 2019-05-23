@@ -9,20 +9,20 @@ services:
 addons:
   - postgresql: "11.2" 
 
-
-before_script:
-  - psql -c 'create database flocka_records;' -U postgres
- 
 before install:
   - sudo apt-get update
 
 install:    
   - pip install -r requirements.txt
-  - pip install pytest-cov
+  - pip install pytest
   - pip install coveralls
 
+
+before_script:
+  - psql -c 'create database flocka_records;' -U postgres
+ 
 script:    
-  - pytest --cov=app/api/tests
+  - pytest app/api/tests
   - coveralls
 
 after_success:
