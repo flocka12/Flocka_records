@@ -6,9 +6,6 @@ python:
 services:
   - postgresql
 
-addons:
-  postgresql: "11.2" 
-
 install:    
 - pip install -r requirements.txt
 - pip install pytest-cov
