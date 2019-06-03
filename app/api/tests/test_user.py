@@ -26,10 +26,10 @@ class UserTest(unittest.TestCase):
         truncate()
 
     def test_it_registers_user(self):
-        # act 
+        # act
         response = self.client.post('api/v1/auth/signup', json=self.sample_user)
 
-        # assert 
+        # assert
         self.assertEqual(201, response.status_code)
         self.assertEqual(self.sample_user['username'], response.get_json()['data']['username'])
         self.assertEqual(self.sample_user['email'], response.get_json()['data']['email'])
@@ -38,13 +38,13 @@ class UserTest(unittest.TestCase):
     def test_it_logs_in_user(self):
         # setup
         self.data_base.add_user(self.sample_user)
-        
-        # act 
+
+        # act
         response = self.client.post('api/v1/auth/login', json=self.sample_user)
 
-        # assert 
+        # assert
         data = response.get_json()
-        
+
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['message'], 'Successfully logged in')
         self.assertIn('access_token', data)
