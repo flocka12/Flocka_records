@@ -13,5 +13,5 @@ def create_app(config_name):
     JWTManager(app)
     app.register_blueprint(VERSION_ONE)
     app.config['SECRET_KEY'] = '7d441f27d441f27567d441f2b6176a'
-    app.config.from_pyfile('..\\instance\\config.py')
+    app.config.from_object(APP_CONFIG[config_name])
     return app
