@@ -47,7 +47,7 @@ MarkupSafe = "==1.1.1"
 PyJWT = "==1.7.1"
 Werkzeug = "==0.14.1"
 Flask-JWT-Extended = "==3.18.0"
-Jinja2 = "==2.10"
+Jinja2 = "==2.11.3"
 
 [requires]
 python_version = "3.7"
